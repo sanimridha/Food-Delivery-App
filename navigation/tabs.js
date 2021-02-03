@@ -8,6 +8,8 @@ import {
 import {Home} from '../screens';
 import {COLORS, icons} from '../constants';
 
+const Tab = createBottomTabNavigator();
+
 const tabs = () => {
   return (
     <View>
