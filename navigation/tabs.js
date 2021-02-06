@@ -17,7 +17,7 @@ const tabs = () => {
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: ({focused}) => {
+          tabBarIcon: ({focused}) => (
             <Image
               source={icons.cutlery}
               resizeMode="contain"
@@ -26,8 +26,8 @@ const tabs = () => {
                 height: 25,
                 tintColor: focused ? COLORS.primary : COLORS.secondary,
               }}
-            />;
-          },
+            />
+          ),
         }}
       />
     </Tab.Navigator>
