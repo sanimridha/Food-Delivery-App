@@ -16,8 +16,8 @@ const tabs = () => {
       tabBarOptions={{
         showLabel: false,
         style: {
-          borderTopWidth: 0,
-          backgroundColor: 'transparent',
+          borderTopWidth: 0, //for removeing tab bar top line
+          backgroundColor: 'transparent', //for adjusting tab bar color
           elevation: 0,
         },
       }}>
