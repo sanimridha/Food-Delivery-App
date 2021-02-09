@@ -24,7 +24,7 @@ const renderHeader = () => (
         style={{width: 30, height: 30}}
       />
     </TouchableOpacity>
-    <View>
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <View
         style={{
           width: '70%',
