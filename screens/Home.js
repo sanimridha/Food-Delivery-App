@@ -94,6 +94,32 @@ const Home = () => {
         avatar: images.avatar_1,
         name: 'Amy',
       },
+      menu: [
+        {
+          menuId: 1,
+          name: 'Crispy Chicken Burger',
+          photo: images.crispy_chicken_burger,
+          description: 'Burger with crispy chicken, cheese and lettuce',
+          calories: 200,
+          price: 10,
+        },
+        {
+          menuId: 2,
+          name: 'Crispy Chicken Burger with Honey Mustard',
+          photo: images.honey_mustard_chicken_burger,
+          description: 'Crispy Chicken Burger with Honey Mustard Coleslaw',
+          calories: 250,
+          price: 15,
+        },
+        {
+          menuId: 3,
+          name: 'Crispy Baked French Fries',
+          photo: images.baked_fries,
+          description: 'Crispy Baked French Fries',
+          calories: 194,
+          price: 8,
+        },
+      ],
     },
   ];
 
