@@ -77,6 +77,26 @@ const Home = () => {
   const fairPrice = 2;
   const expensive = 3;
 
+  const resturantData = [
+    {
+      id: 1,
+      name: 'Toasty Buns Burgers',
+      rating: 4.8,
+      categories: [5, 7],
+      priceRating: affordable,
+      photo: images.burger_restaurant_1,
+      duration: '30 - 45 min',
+      location: {
+        latitude: 23.773092,
+        longitude: 90.409808,
+      },
+      courier: {
+        avatar: images.avatar_1,
+        name: 'Amy',
+      },
+    },
+  ];
+
   return <SafeAreaView style={styles.container}>{renderHeader()}</SafeAreaView>;
 };
 
