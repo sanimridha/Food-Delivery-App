@@ -24,6 +24,11 @@ const renderHeader = () => (
         style={{width: 30, height: 30}}
       />
     </TouchableOpacity>
+    <View>
+      <View>
+        <Text style={{...FONTS.h3}}>Location</Text>
+      </View>
+    </View>
   </View>
 );
 
