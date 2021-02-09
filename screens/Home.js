@@ -25,7 +25,15 @@ const renderHeader = () => (
       />
     </TouchableOpacity>
     <View>
-      <View>
+      <View
+        style={{
+          width: '70%',
+          height: '100%',
+          backgroundColor: COLORS.lightGray3,
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: SIZES.radius,
+        }}>
         <Text style={{...FONTS.h3}}>Location</Text>
       </View>
     </View>
