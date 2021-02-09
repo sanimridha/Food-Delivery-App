@@ -37,7 +37,12 @@ const renderHeader = () => (
         <Text style={{...FONTS.h3}}>Location</Text>
       </View>
     </View>
-    <TouchableOpacity>
+    <TouchableOpacity
+      style={{
+        width: 50,
+        paddingRight: SIZES.padding * 2,
+        justifyContent: 'center',
+      }}>
       <Image
         source={icons.basket}
         resizeMode="contain"
