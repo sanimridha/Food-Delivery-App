@@ -10,6 +10,33 @@ import {
 } from 'react-native';
 import {COLORS, icons, images, SIZES, FONTS} from '../constants';
 
+const Home = () => {
+  //Dummy Datas For Current Location
+  const initialCurrentLocation = {
+    streetName: 'Gulshan 1',
+    gps: {
+      latitude: 23.780416,
+      longitude: 90.416722,
+    },
+  };
+
+  return <SafeAreaView style={styles.container}>{renderHeader()}</SafeAreaView>;
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.lightGray4,
+  },
+  shadow: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+  },
+});
+
 const renderHeader = () => (
   <View style={{flexDirection: 'row', height: 50}}>
     <TouchableOpacity
@@ -51,23 +78,5 @@ const renderHeader = () => (
     </TouchableOpacity>
   </View>
 );
-
-const Home = () => {
-  return <SafeAreaView style={styles.container}>{renderHeader()}</SafeAreaView>;
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.lightGray4,
-  },
-  shadow: {
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-  },
-});
 
 export default Home;
