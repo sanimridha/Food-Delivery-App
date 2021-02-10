@@ -326,7 +326,9 @@ const Home = () => {
   const [categories, setCategories] = useState(categoryData);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [resturants, setResturants] = useState(resturantData);
-  const [currentLocation, setCurrentLocation] = React.useState(initialCurrentLocation);
+  const [currentLocation, setCurrentLocation] = React.useState(
+    initialCurrentLocation,
+  );
 
   const renderHeader = () => (
     <View style={{flexDirection: 'row', height: 50}}>
@@ -369,8 +371,19 @@ const Home = () => {
       </TouchableOpacity>
     </View>
   );
+  const renderMainCategories = () => (
+    <View style={{padding: SIZES.padding * 2}}>
+      <Text style={{...FONTS.h1}}>Main</Text>
+      <Text style={{...FONTS.h1}}>Categories</Text>
+    </View>
+  );
 
-  return <SafeAreaView style={styles.container}>{renderHeader()}</SafeAreaView>;
+  return (
+    <SafeAreaView style={styles.container}>
+      {renderHeader()}
+      {renderMainCategories()}
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -386,7 +399,5 @@ const styles = StyleSheet.create({
     },
   },
 });
-
-
 
 export default Home;
