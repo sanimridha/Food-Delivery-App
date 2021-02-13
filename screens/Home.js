@@ -427,8 +427,8 @@ const Home = () => {
     };
     return (
       <View style={{padding: SIZES.padding * 2}}>
-        <Text style={{...FONTS.h1}}>Main</Text>
-        <Text style={{...FONTS.h1}}>Categories</Text>
+        <Text style={{...FONTS.h1, fontWeight: 'bold'}}>Main</Text>
+        <Text style={{...FONTS.h1, fontWeight: 'bold'}}>Categories</Text>
 
         <FlatList
           data={categories}
@@ -451,13 +451,28 @@ const Home = () => {
           <View>
             <Image
               source={item.photo}
-              resizeMode="contain"
+              resizeMode="cover"
               style={{
                 width: '100%',
                 height: 200,
                 borderRadius: SIZES.radius,
               }}
             />
+            <View
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                height: 50,
+                width: SIZES.width * 0.3,
+                backgroundColor: COLORS.white,
+                borderTopRightRadius: SIZES.radius,
+                borderBottomLeftRadius: SIZES.radius,
+                alignItems: 'center',
+                justifyContent: 'center',
+                ...styles.shadow,
+              }}>
+              <Text style={{...FONTS.h4}}>{item.duration}</Text>
+            </View>
           </View>
         </TouchableOpacity>
       );
