@@ -377,7 +377,7 @@ const Home = () => {
         <TouchableOpacity
           style={{
             padding: SIZES.padding,
-            marginRight: 10,
+            marginRight: 5,
             paddingBottom: SIZES.padding * 2,
             backgroundColor: COLORS.primary,
             borderRadius: SIZES.radius,
@@ -385,7 +385,17 @@ const Home = () => {
             justifyContent: 'center',
             marginBottom: SIZES.padding,
             ...styles.shadow,
-          }}></TouchableOpacity>
+          }}>
+          <View
+            style={{
+              width: 50,
+              height: 50,
+              borderRadius: 25,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: COLORS.white,
+            }}></View>
+        </TouchableOpacity>
       );
     };
     return (
@@ -396,7 +406,7 @@ const Home = () => {
         <FlatList
           data={categories}
           horizontal
-          showsHorizontalScrollIndicator={true}
+          showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => `${item.id}`}
           renderItem={renderItem}
           contentContainerStyle={{paddingVertical: SIZES.padding * 2}}
