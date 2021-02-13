@@ -1,5 +1,5 @@
 import Home from './Home';
-import Resturants from './Resturants';
+import Resturant from './Resturant';
 import OrderDelivery from './OrderDelivery';
 
-export {Home, Resturants, OrderDelivery};
+export {Home, Resturant, OrderDelivery};
