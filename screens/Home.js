@@ -377,7 +377,7 @@ const Home = () => {
         <TouchableOpacity
           style={{
             padding: SIZES.padding,
-            marginRight: 5,
+            marginRight: SIZES.padding,
             paddingBottom: SIZES.padding * 2,
             backgroundColor: COLORS.primary,
             borderRadius: SIZES.radius,
