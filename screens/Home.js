@@ -493,6 +493,7 @@ const Home = () => {
                 marginRight: 10,
               }}
             />
+            <Text style={{...FONTS.body3}}>{item.rating}</Text>
           </View>
         </TouchableOpacity>
       );
