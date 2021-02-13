@@ -441,12 +441,33 @@ const Home = () => {
       </View>
     );
   };
-  const renderResturantList = ({item}) => {
+  const renderResturantList = () => {
+    const renderItem = ({item}) => {
+      return (
+        <TouchableOpacity
+          style={{
+            marginBottom: SIZES.padding * 2,
+          }}>
+          <View>
+            <Image
+              source={item.photo}
+              resizeMode="contain"
+              style={{
+                width: '100%',
+                height: 200,
+                borderRadius: SIZES.radius,
+              }}
+            />
+          </View>
+        </TouchableOpacity>
+      );
+    };
     return (
       <FlatList
         data={resturants}
         keyExtractor={(item) => `${item.id}`}
         renderItem={renderItem}
+        showsHorizontalScrollIndicator={false}
         contentContainerStyle={{
           paddingHorizontal: SIZES.padding * 2,
           paddingBottom: 30,
@@ -459,6 +480,7 @@ const Home = () => {
     <SafeAreaView style={styles.container}>
       {renderHeader()}
       {renderMainCategories()}
+      {renderResturantList()}
     </SafeAreaView>
   );
 };
