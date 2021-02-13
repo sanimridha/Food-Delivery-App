@@ -448,7 +448,8 @@ const Home = () => {
           style={{
             marginBottom: SIZES.padding * 2,
           }}>
-          <View>
+          {/* image section */}
+          <View style={{marginBottom: SIZES.padding}}>
             <Image
               source={item.photo}
               resizeMode="cover"
@@ -474,6 +475,8 @@ const Home = () => {
               <Text style={{...FONTS.h4}}>{item.duration}</Text>
             </View>
           </View>
+          {/* Resturant Info */}
+          <Text style={{...FONTS.body2}}>{item.name}</Text>
         </TouchableOpacity>
       );
     };
