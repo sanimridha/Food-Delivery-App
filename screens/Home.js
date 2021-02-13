@@ -477,6 +477,23 @@ const Home = () => {
           </View>
           {/* Resturant Info */}
           <Text style={{...FONTS.body2}}>{item.name}</Text>
+
+          <View
+            style={{
+              marginTop: SIZES.padding,
+              flexDirection: 'row',
+            }}>
+            {/* Rating */}
+            <Image
+              source={icons.star}
+              style={{
+                height: 20,
+                width: 20,
+                tintColor: COLORS.primary,
+                marginRight: 10,
+              }}
+            />
+          </View>
         </TouchableOpacity>
       );
     };
