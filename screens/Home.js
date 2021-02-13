@@ -326,7 +326,7 @@ const Home = ({navigation}) => {
   const [categories, setCategories] = useState(categoryData);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [resturants, setResturants] = useState(resturantData);
-  const [currentLocation, setCurrentLocation] = React.useState(
+  const [currentLocation, setCurrentLocation] = useState(
     initialCurrentLocation,
   );
   const onSelectCategory = (category) => {
