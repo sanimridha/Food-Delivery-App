@@ -441,6 +441,19 @@ const Home = () => {
       </View>
     );
   };
+  const renderResturantList = ({item}) => {
+    return (
+      <FlatList
+        data={resturants}
+        keyExtractor={(item) => `${item.id}`}
+        renderItem={renderItem}
+        contentContainerStyle={{
+          paddingHorizontal: SIZES.padding * 2,
+          paddingBottom: 30,
+        }}
+      />
+    );
+  };
 
   return (
     <SafeAreaView style={styles.container}>
