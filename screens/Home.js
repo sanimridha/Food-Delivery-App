@@ -401,6 +401,14 @@ const Home = () => {
               style={{width: 30, height: 30}}
             />
           </View>
+          <Text
+            style={{
+              marginTop: SIZES.padding,
+              color: COLORS.white,
+              ...FONTS.body5,
+            }}>
+            {item.name}
+          </Text>
         </TouchableOpacity>
       );
     };
