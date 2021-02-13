@@ -329,7 +329,14 @@ const Home = () => {
   const [currentLocation, setCurrentLocation] = React.useState(
     initialCurrentLocation,
   );
-
+  const onSelectCategory = (category) => {
+    //Fillter resturants
+    let resturantList = resturantData.filter((a) =>
+      a.categories.includes(category.id),
+    );
+    setResturants(resturantList);
+    setSelectedCategory(category);
+  };
   const renderHeader = () => (
     <View style={{flexDirection: 'row', height: 50}}>
       <TouchableOpacity
@@ -385,7 +392,8 @@ const Home = () => {
             justifyContent: 'center',
             marginBottom: SIZES.padding,
             ...styles.shadow,
-          }}>
+          }}
+          onPress={() => onSelectCategory(item)}>
           <View
             style={{
               width: 50,
