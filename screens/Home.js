@@ -8,10 +8,9 @@ import {
   FlatList,
   SafeAreaView,
 } from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {COLORS, icons, images, SIZES, FONTS} from '../constants';
 
-const Home = () => {
+const Home = ({navigation}) => {
   //Dummy Datas For Current Location
   const initialCurrentLocation = {
     streetName: 'Gulshan 1',
@@ -437,7 +436,9 @@ const Home = () => {
     };
     return (
       <View style={{padding: SIZES.padding * 2}}>
-        <Text style={{...FONTS.h1, fontWeight: 'bold'}}>Main</Text>
+        <Text style={{...FONTS.h1, fontWeight: 'bold', color: COLORS.primary}}>
+          Main
+        </Text>
         <Text style={{...FONTS.h1, fontWeight: 'bold'}}>Categories</Text>
 
         <FlatList
@@ -457,7 +458,10 @@ const Home = () => {
         <TouchableOpacity
           style={{
             marginBottom: SIZES.padding * 2,
-          }}>
+          }}
+          onPress={() =>
+            navigation.navigate('Resturant', {item, currentLocation})
+          }>
           {/* image section */}
           <View style={{marginBottom: SIZES.padding}}>
             <Image
