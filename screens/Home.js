@@ -337,6 +337,15 @@ const Home = () => {
     setResturants(resturantList);
     setSelectedCategory(category);
   };
+  const getCategoryNameById = (id) => {
+    let category = categories.filter((a) => a.id == id);
+
+    if (category.length > 0) {
+      return category[0].name;
+    } else {
+      return '';
+    }
+  };
   const renderHeader = () => (
     <View style={{flexDirection: 'row', height: 50}}>
       <TouchableOpacity
@@ -494,6 +503,30 @@ const Home = () => {
               }}
             />
             <Text style={{...FONTS.body3}}>{item.rating}</Text>
+            {/* Category  */}
+            <View
+              style={{
+                flexDirection: 'row',
+                marginLeft: 10,
+              }}>
+              {item.categories.map((categoryId) => {
+                return (
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                    }}
+                    key={categoryId}>
+                    <Text style={{...FONTS.body3}}>
+                      {getCategoryNameById(categoryId)}
+                    </Text>
+                    <Text style={{...FONTS.h3, color: COLORS.darkgray}}>
+                      {' '}
+                      .{' '}
+                    </Text>
+                  </View>
+                );
+              })}
+            </View>
           </View>
         </TouchableOpacity>
       );
