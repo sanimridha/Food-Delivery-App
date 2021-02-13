@@ -372,7 +372,7 @@ const Home = () => {
     </View>
   );
   const renderMainCategories = () => {
-    const renderItem = () => {
+    const renderItem = ({item}) => {
       return (
         <TouchableOpacity
           style={{
@@ -394,7 +394,13 @@ const Home = () => {
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor: COLORS.white,
-            }}></View>
+            }}>
+            <Image
+              source={item.icon}
+              resizeMode="contain"
+              style={{width: 30, height: 30}}
+            />
+          </View>
         </TouchableOpacity>
       );
     };
