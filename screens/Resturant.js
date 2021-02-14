@@ -118,6 +118,15 @@ const Resturant = ({route, navigation}) => {
                   }}>
                   <Text style={{...FONTS.body1}}>-</Text>
                 </TouchableOpacity>
+                <View
+                  style={{
+                    width: 50,
+                    backgroundColor: COLORS.white,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                  <Text style={{...FONTS.h2}}>5</Text>
+                </View>
               </View>
             </View>
           </View>
