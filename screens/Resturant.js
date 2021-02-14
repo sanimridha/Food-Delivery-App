@@ -1,5 +1,15 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  TouchableOpacity,
+  Image,
+  Animated,
+} from 'react-native';
+import {isIphoneX} from 'react-native-iphone-x-helper';
+import {icons, COLORS, SIZES, FONTS} from '../constants';
 
 const Resturant = () => {
   return (
@@ -8,5 +18,7 @@ const Resturant = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({});
 
 export default Resturant;
