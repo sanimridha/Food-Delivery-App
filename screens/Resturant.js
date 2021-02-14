@@ -86,7 +86,20 @@ const Resturant = ({route, navigation}) => {
         pagingEnabled
         scrollEventThrottle={16}
         snapToAlignment="center"
-        showsHorizontalScrollIndicator={false}></Animated.ScrollView>
+        showsHorizontalScrollIndicator={false}>
+        {resturant?.menu.map((item, index) => (
+          <View key={`menu-${index}`} style={{alignItems: 'center'}}>
+            <View style={{height: SIZES.height * 0.35}}>
+              {/* Food images */}
+              <Image
+                source={item.photo}
+                resizeMode="cover"
+                style={{width: SIZES.width, height: '100%'}}
+              />
+            </View>
+          </View>
+        ))}
+      </Animated.ScrollView>
     );
   };
 
