@@ -165,6 +165,9 @@ const Resturant = ({route, navigation}) => {
                 source={icons.fire}
                 style={{width: 20, height: 20, marginRight: 10}}
               />
+              <Text style={{...FONTS.body3, color: COLORS.darkgray}}>
+                {item.calories.toFixed(2)} cal
+              </Text>
             </View>
           </View>
         ))}
