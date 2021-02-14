@@ -104,7 +104,7 @@ const Resturant = ({route, navigation}) => {
             <View
               style={{
                 position: 'absolute',
-                top: 225,
+                top: 240,
                 width: SIZES.width,
                 height: 50,
                 justifyContent: 'center',
