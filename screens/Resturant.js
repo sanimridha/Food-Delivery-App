@@ -80,7 +80,14 @@ const Resturant = ({route, navigation}) => {
     );
   };
   const renderFoodInfo = () => {
-    return <Animated.ScrollView></Animated.ScrollView>;
+    return (
+      <Animated.ScrollView
+        horizontal
+        pagingEnabled
+        scrollEventThrottle={16}
+        snapToAlignment="center"
+        showsHorizontalScrollIndicator={false}></Animated.ScrollView>
+    );
   };
 
   return (
