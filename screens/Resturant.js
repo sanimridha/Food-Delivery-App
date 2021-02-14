@@ -11,7 +11,7 @@ import {
 import {isIphoneX} from 'react-native-iphone-x-helper';
 import {icons, COLORS, SIZES, FONTS} from '../constants';
 
-const Resturant = ({route}) => {
+const Resturant = ({route, navigation}) => {
   const [resturant, setResturant] = useState(null);
   const [currentLocation, setCurrentLocation] = useState(null);
 
@@ -30,7 +30,8 @@ const Resturant = ({route}) => {
             width: 50,
             paddingLeft: SIZES.padding * 2,
             justifyContent: 'center',
-          }}>
+          }}
+          onPress={() => navigation.goBack()}>
           <Image
             source={icons.back}
             resizeMode="contain"
