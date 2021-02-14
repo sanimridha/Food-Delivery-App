@@ -160,7 +160,7 @@ const Resturant = ({route, navigation}) => {
               <Text style={{...FONTS.body3}}>{item.description}</Text>
             </View>
             {/* calories */}
-            <View>
+            <View style={{flexDirection: 'row', marginTop: 10}}>
               <Image
                 source={icons.fire}
                 style={{width: 20, height: 20, marginRight: 10}}
