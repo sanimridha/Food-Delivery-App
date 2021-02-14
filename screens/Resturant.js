@@ -41,6 +41,25 @@ const Resturant = ({route, navigation}) => {
             }}
           />
         </TouchableOpacity>
+        {/* Resturant Name Section */}
+        <View
+          style={{
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <View
+            style={{
+              height: 50,
+              alignItems: 'center',
+              justifyContent: 'center',
+              paddingHorizontal: SIZES.padding * 3,
+              borderRadius: SIZES.radius,
+              backgroundColor: COLORS.lightGray3,
+            }}>
+            <Text style={{...FONTS.h3}}>{resturant?.name}</Text>
+          </View>
+        </View>
       </View>
     );
   };
