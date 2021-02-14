@@ -21,11 +21,25 @@ const Resturant = ({route}) => {
     setResturant(item);
     setCurrentLocation(currentLocation);
   }, []);
-  return (
-    <View>
-      <Text></Text>
-    </View>
-  );
+
+  const renderHeader = () => {
+    return (
+      <View>
+        <TouchableOpacity>
+          <Image
+            source={icons.back}
+            resizeMode="contain"
+            style={{
+              width: 30,
+              height: 30,
+            }}
+          />
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
+  return <SafeAreaView>{renderHeader()}</SafeAreaView>;
 };
 
 const styles = StyleSheet.create({});
