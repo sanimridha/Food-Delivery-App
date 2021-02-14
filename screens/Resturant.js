@@ -57,7 +57,9 @@ const Resturant = ({route, navigation}) => {
               borderRadius: SIZES.radius,
               backgroundColor: COLORS.lightGray3,
             }}>
-            <Text style={{...FONTS.h3}}>{resturant?.name}</Text>
+            <Text style={{...FONTS.h3, fontWeight: 'bold'}}>
+              {resturant?.name}
+            </Text>
           </View>
         </View>
         {/* List Button Section */}
@@ -117,7 +119,7 @@ const Resturant = ({route, navigation}) => {
                   borderTopLeftRadius: 25,
                   borderBottomLeftRadius: 25,
                 }}>
-                <Text style={{...FONTS.body1}}>-</Text>
+                <Text style={{...FONTS.body1, fontWeight: 'bold'}}>-</Text>
               </TouchableOpacity>
               <View
                 style={{
@@ -126,7 +128,7 @@ const Resturant = ({route, navigation}) => {
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}>
-                <Text style={{...FONTS.h2}}>5</Text>
+                <Text style={{...FONTS.h2, fontWeight: 'bold'}}>5</Text>
               </View>
               <TouchableOpacity
                 style={{
@@ -137,7 +139,7 @@ const Resturant = ({route, navigation}) => {
                   borderTopRightRadius: 25,
                   borderBottomRightRadius: 25,
                 }}>
-                <Text style={{...FONTS.body1}}>+</Text>
+                <Text style={{...FONTS.body1, fontWeight: 'bold'}}>+</Text>
               </TouchableOpacity>
             </View>
 
@@ -154,6 +156,7 @@ const Resturant = ({route, navigation}) => {
                   marginVertical: 10,
                   textAlign: 'center',
                   ...FONTS.h2,
+                  fontWeight: 'bold',
                 }}>
                 {item.name}-{item.price.toFixed(2)}
               </Text>
