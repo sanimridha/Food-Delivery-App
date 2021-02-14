@@ -79,8 +79,16 @@ const Resturant = ({route, navigation}) => {
       </View>
     );
   };
+  const renderFoodInfo = () => {
+    return <Animated.ScrollView></Animated.ScrollView>;
+  };
 
-  return <SafeAreaView>{renderHeader()}</SafeAreaView>;
+  return (
+    <SafeAreaView>
+      {renderHeader()}
+      {renderFoodInfo()}
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({});
