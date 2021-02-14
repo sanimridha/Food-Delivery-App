@@ -157,6 +157,7 @@ const Resturant = ({route, navigation}) => {
                 }}>
                 {item.name}-{item.price.toFixed(2)}
               </Text>
+              <Text style={{...FONTS.body3}}>{item.description}</Text>
             </View>
           </View>
         ))}
