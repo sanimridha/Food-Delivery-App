@@ -24,8 +24,13 @@ const Resturant = ({route}) => {
 
   const renderHeader = () => {
     return (
-      <View>
-        <TouchableOpacity>
+      <View style={{flexDirection: 'row'}}>
+        <TouchableOpacity
+          style={{
+            width: 50,
+            paddingLeft: SIZES.padding * 2,
+            justifyContent: 'center',
+          }}>
           <Image
             source={icons.back}
             resizeMode="contain"
