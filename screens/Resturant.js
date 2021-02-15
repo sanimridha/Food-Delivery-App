@@ -193,7 +193,15 @@ const Resturant = ({route, navigation}) => {
             alignItems: 'center',
             justifyContent: 'center',
             height: SIZES.padding,
-          }}></View>
+          }}>
+          {resturant?.menu.map((item, index) => {
+            const opacity = dotPosition.interpolate({
+              inputRange: [index - 1, index, index + 1],
+              outputRange: [0.3, 1, 0.3],
+              extrapolate: 'clamp',
+            });
+          })}
+        </View>
       </View>
     );
   };
