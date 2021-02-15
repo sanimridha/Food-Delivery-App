@@ -197,12 +197,15 @@ const Resturant = ({route, navigation}) => {
       </View>
     );
   };
+  const renderOrder = () => {
+    return <View>{renderDots()}</View>;
+  };
 
   return (
     <SafeAreaView>
       {renderHeader()}
       {renderFoodInfo()}
-      {/* {renderOrder()} */}
+      {renderOrder()}
     </SafeAreaView>
   );
 };
