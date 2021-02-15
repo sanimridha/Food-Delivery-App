@@ -281,6 +281,7 @@ const Resturant = ({route, navigation}) => {
                   tintColor: COLORS.darkgray,
                 }}
               />
+              <Text style={{marginLeft: SIZES.padding, ...FONTS.h4}}>8888</Text>
             </View>
           </View>
         </View>
