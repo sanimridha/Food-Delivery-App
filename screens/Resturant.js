@@ -103,51 +103,50 @@ const Resturant = ({route, navigation}) => {
                 resizeMode="cover"
                 style={{width: SIZES.width, height: '100%'}}
               />
-            </View>
-
-            {/* Quantity */}
-            <View
-              style={{
-                position: 'absolute',
-                top: 225,
-                // bottom: 95,
-                width: SIZES.width,
-                height: 50,
-                justifyContent: 'center',
-                alignItems: 'center', //added
-                flexDirection: 'row',
-              }}>
-              <TouchableOpacity
-                style={{
-                  width: 50,
-                  backgroundColor: COLORS.white,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderTopLeftRadius: 25,
-                  borderBottomLeftRadius: 25,
-                }}>
-                <Text style={{...FONTS.body1, fontWeight: 'bold'}}>-</Text>
-              </TouchableOpacity>
+              {/* Quantity */}
               <View
                 style={{
-                  width: 50,
-                  backgroundColor: COLORS.white,
-                  alignItems: 'center',
+                  position: 'absolute',
+                  // top: 225,
+                  bottom: -25,
+                  width: SIZES.width,
+                  height: 50,
                   justifyContent: 'center',
+                  alignItems: 'center', //added
+                  flexDirection: 'row',
                 }}>
-                <Text style={{...FONTS.h2, fontWeight: 'bold'}}>5</Text>
+                <TouchableOpacity
+                  style={{
+                    width: 50,
+                    backgroundColor: COLORS.white,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderTopLeftRadius: 25,
+                    borderBottomLeftRadius: 25,
+                  }}>
+                  <Text style={{...FONTS.body1, fontWeight: 'bold'}}>-</Text>
+                </TouchableOpacity>
+                <View
+                  style={{
+                    width: 50,
+                    backgroundColor: COLORS.white,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                  <Text style={{...FONTS.h2, fontWeight: 'bold'}}>5</Text>
+                </View>
+                <TouchableOpacity
+                  style={{
+                    width: 50,
+                    backgroundColor: COLORS.white,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderTopRightRadius: 25,
+                    borderBottomRightRadius: 25,
+                  }}>
+                  <Text style={{...FONTS.body1, fontWeight: 'bold'}}>+</Text>
+                </TouchableOpacity>
               </View>
-              <TouchableOpacity
-                style={{
-                  width: 50,
-                  backgroundColor: COLORS.white,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderTopRightRadius: 25,
-                  borderBottomRightRadius: 25,
-                }}>
-                <Text style={{...FONTS.body1, fontWeight: 'bold'}}>+</Text>
-              </TouchableOpacity>
             </View>
 
             {/* Name & description */}
@@ -234,7 +233,27 @@ const Resturant = ({route, navigation}) => {
     );
   };
   const renderOrder = () => {
-    return <View>{renderDots()}</View>;
+    return (
+      <View>
+        {renderDots()}
+        <View
+          style={{
+            backgroundColor: COLORS.white,
+            borderTopLeftRadius: 40,
+            borderTopRightRadius: 40,
+          }}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              paddingVertical: SIZES.padding * 2,
+              paddingHorizontal: SIZES.padding * 3,
+              borderBottomColor: COLORS.lightGray2,
+              borderBottomWidth: 1,
+            }}></View>
+        </View>
+      </View>
+    );
   };
 
   return (
