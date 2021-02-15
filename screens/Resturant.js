@@ -209,6 +209,19 @@ const Resturant = ({route, navigation}) => {
             outputRange: [COLORS.darkgray, COLORS.primary, COLORS.darkgray],
             extrapolate: 'clamp',
           });
+          return (
+            <Animated.View
+              key={`dot-${index}`}
+              opacity={opacity}
+              style={{
+                borderRadius: SIZES.radius,
+                marginHorizontal: 6,
+                width: dotSize,
+                height: dotSize,
+                backgroundColor: dotColor,
+              }}
+            />
+          );
         })}
       </View>
     </View>;
