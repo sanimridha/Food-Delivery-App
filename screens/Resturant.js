@@ -12,6 +12,7 @@ import {isIphoneX} from 'react-native-iphone-x-helper';
 import {icons, COLORS, SIZES, FONTS} from '../constants';
 
 const Resturant = ({route, navigation}) => {
+  const scrollX = new Animated.Value(0);
   const [resturant, setResturant] = useState(null);
   const [currentLocation, setCurrentLocation] = useState(null);
 
@@ -104,10 +105,12 @@ const Resturant = ({route, navigation}) => {
             <View
               style={{
                 position: 'absolute',
-                top: 240,
+                top: 225,
+                // bottom: 95,
                 width: SIZES.width,
                 height: 50,
                 justifyContent: 'center',
+                alignItems: 'center', //added
                 flexDirection: 'row',
               }}>
               <TouchableOpacity
@@ -177,11 +180,29 @@ const Resturant = ({route, navigation}) => {
       </Animated.ScrollView>
     );
   };
+  const renderDots = () => {
+    const dotPosition = Animated.divide(scrollX, SIZES.width);
+    return (
+      <View
+        style={{
+          height: 30,
+        }}>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: SIZES.padding,
+          }}></View>
+      </View>
+    );
+  };
 
   return (
     <SafeAreaView>
       {renderHeader()}
       {renderFoodInfo()}
+      {/* {renderOrder()} */}
     </SafeAreaView>
   );
 };
