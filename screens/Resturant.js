@@ -205,6 +205,11 @@ const Resturant = ({route, navigation}) => {
               outputRange: [SIZES.base * 0.8, 10, SIZES.base * 0.8],
               extrapolate: 'clamp',
             });
+            const dotColor = dotPosition.interpolate({
+              inputRange: [index - 1, index, index + 1],
+              outputRange: [COLORS.darkgray, COLORS.primary, COLORS.darkgray],
+              extrapolate: 'clamp',
+            });
           })}
         </View>
       </View>
