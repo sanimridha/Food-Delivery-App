@@ -267,6 +267,9 @@ const Resturant = ({route, navigation}) => {
                 resizeMode="contain"
                 style={{width: 20, height: 20, tintColor: COLORS.darkgray}}
               />
+              <Text style={{marginLeft: SIZES.padding, ...FONTS.h4}}>
+                Location
+              </Text>
             </View>
           </View>
         </View>
