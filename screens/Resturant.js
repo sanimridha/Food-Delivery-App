@@ -303,6 +303,17 @@ const Resturant = ({route, navigation}) => {
             </TouchableOpacity>
           </View>
         </View>
+        {isIphoneX() && (
+          <View
+            style={{
+              position: 'absolute',
+              bottom: -34,
+              left: 0,
+              right: 0,
+              height: 34,
+              backgroundColor: COLORS.white,
+            }}></View>
+        )}
       </View>
     );
   };
