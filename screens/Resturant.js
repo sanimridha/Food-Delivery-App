@@ -200,6 +200,11 @@ const Resturant = ({route, navigation}) => {
               outputRange: [0.3, 1, 0.3],
               extrapolate: 'clamp',
             });
+            const dotSize = dotPosition.interpolate({
+              inputRange: [index - 1, index, index + 1],
+              outputRange: [SIZES.base * 0.8, 10, SIZES.base * 0.8],
+              extrapolate: 'clamp',
+            });
           })}
         </View>
       </View>
