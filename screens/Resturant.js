@@ -254,6 +254,21 @@ const Resturant = ({route, navigation}) => {
             <Text style={{...FONTS.h3}}>Items in Cart</Text>
             <Text style={{...FONTS.h3}}>$45</Text>
           </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              paddingVertical: SIZES.padding * 2,
+              paddingHorizontal: SIZES.padding * 3,
+            }}>
+            <View style={{flexDirection: 'row'}}>
+              <Image
+                source={icons.pin}
+                resizeMode="contain"
+                style={{width: 20, height: 20, tintColor: COLORS.darkgray}}
+              />
+            </View>
+          </View>
         </View>
       </View>
     );
