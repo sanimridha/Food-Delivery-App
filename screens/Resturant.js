@@ -89,7 +89,11 @@ const Resturant = ({route, navigation}) => {
         pagingEnabled
         scrollEventThrottle={16}
         snapToAlignment="center"
-        showsHorizontalScrollIndicator={false}>
+        showsHorizontalScrollIndicator={false}
+        onScroll={Animated.event(
+          [{nativeEvent: {contentOffset: {x: scrollX}}}],
+          {useNativeDriver: false},
+        )}>
         {resturant?.menu.map((item, index) => (
           <View key={`menu-${index}`} style={{alignItems: 'center'}}>
             <View style={{height: SIZES.height * 0.35}}>
