@@ -64,6 +64,22 @@ const OrderDelivery = ({route, navigation}) => {
         </View>
       </Marker>
     );
+    const carIcon = () => (
+      <Marker
+        coordinate={fromLocation}
+        anchor={{x: 0.5, y: 0.5}}
+        flat={true}
+        //rotation
+      >
+        <Image
+          source={icons.car}
+          style={{
+            width: 40,
+            height: 40,
+          }}
+        />
+      </Marker>
+    );
 
     return (
       <View style={{flex: 1}}>
@@ -72,6 +88,7 @@ const OrderDelivery = ({route, navigation}) => {
           provider={PROVIDER_GOOGLE}
           initialRegion={region}>
           {destinationMarker()}
+          {carIcon()}
         </MapView>
       </View>
     );
