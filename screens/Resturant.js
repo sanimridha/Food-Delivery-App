@@ -65,6 +65,10 @@ const Resturant = ({route, navigation}) => {
 
     return itemCount;
   };
+  const sumOrder = () => {
+    let total = orderItems.reduce((a, b) => a + (b.total || 0), 0);
+    return total.toFixed(2);
+  };
 
   const renderHeader = () => {
     return (
@@ -299,7 +303,7 @@ const Resturant = ({route, navigation}) => {
               borderBottomWidth: 1,
             }}>
             <Text style={{...FONTS.h3}}>{getBusketItem()} Items in Cart</Text>
-            <Text style={{...FONTS.h3}}>$45</Text>
+            <Text style={{...FONTS.h3}}>${sumOrder()}</Text>
           </View>
           <View
             style={{
