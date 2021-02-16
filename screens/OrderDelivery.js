@@ -34,7 +34,10 @@ const OrderDelivery = ({route, navigation}) => {
   const renderMap = () => {
     return (
       <View style={{flex: 1}}>
-        <MapView style={{flex: 1}}></MapView>
+        <MapView
+          style={{flex: 1}}
+          provider={PROVIDER_GOOGLE}
+          initialRegion={region}></MapView>
       </View>
     );
   };
