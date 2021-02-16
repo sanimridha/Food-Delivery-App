@@ -42,6 +42,14 @@ const Resturant = ({route, navigation}) => {
       }
       setOrderItems(orderList);
     } else {
+      if (item.length > 0) {
+        if (item[0]?.qty > 0) {
+          let newQty = item[0].qty - 1;
+          item[0].qty = newQty;
+          item[0].total = newQty.price;
+        }
+      }
+      setOrderItems(orderList);
     }
   };
   const getOrderQty = (menuId) => {
@@ -153,7 +161,8 @@ const Resturant = ({route, navigation}) => {
                     justifyContent: 'center',
                     borderTopLeftRadius: 25,
                     borderBottomLeftRadius: 25,
-                  }}>
+                  }}
+                  onPress={() => editOrder('-', item.menuId, item.price)}>
                   <Text style={{...FONTS.body1, fontWeight: 'bold'}}>-</Text>
                 </TouchableOpacity>
                 <View
