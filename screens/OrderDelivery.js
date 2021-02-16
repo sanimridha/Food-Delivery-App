@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 
-import {COLORS, FONTS, SIZES, GOOGLE_API_KEY} from '../constants';
+import {COLORS, FONTS, SIZES, GOOGLE_API_KEY, icons} from '../constants';
 
 const OrderDelivery = ({route, navigation}) => {
   const [resturant, setResturant] = useState(null);
@@ -32,12 +32,47 @@ const OrderDelivery = ({route, navigation}) => {
   }, []);
 
   const renderMap = () => {
+    const destinationMarker = () => (
+      <Marker coordinate={toLocation}>
+        <View
+          style={{
+            height: 40,
+            width: 40,
+            borderRadius: 20,
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: COLORS.white,
+          }}>
+          <View
+            style={{
+              height: 30,
+              width: 30,
+              borderRadius: 15,
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: COLORS.primary,
+            }}>
+            <Image
+              source={icons.pin}
+              style={{
+                width: 25,
+                height: 25,
+                tintColor: COLORS.white,
+              }}
+            />
+          </View>
+        </View>
+      </Marker>
+    );
+
     return (
       <View style={{flex: 1}}>
         <MapView
           style={{flex: 1}}
           provider={PROVIDER_GOOGLE}
-          initialRegion={region}></MapView>
+          initialRegion={region}>
+          {destinationMarker()}
+        </MapView>
       </View>
     );
   };
