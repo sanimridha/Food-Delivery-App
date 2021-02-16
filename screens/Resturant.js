@@ -15,6 +15,7 @@ const Resturant = ({route, navigation}) => {
   const scrollX = new Animated.Value(0);
   const [resturant, setResturant] = useState(null);
   const [currentLocation, setCurrentLocation] = useState(null);
+  const [orderItems, setOrderItems] = useState([]);
 
   useEffect(() => {
     let {item, currentLocation} = route.params;
@@ -22,6 +23,28 @@ const Resturant = ({route, navigation}) => {
     setResturant(item);
     setCurrentLocation(currentLocation);
   }, []);
+  const editOrder = (action, menuId, price) => {
+    if (action == '+') {
+      let orderList = orderItems.slice();
+      let item = orderList.filter((a) => a.menuId);
+
+      if (item.length > 0) {
+        let newQty = item[0].qty + 1;
+        item[0].qty = newQty;
+        item[0].total = item[0].qty * price;
+      } else {
+        const newItem = {
+          menuId: menuId,
+          qty: 1,
+          price: price,
+          total: price,
+        };
+        orderList.push(newItem);
+      }
+      setOrderItems(orderItems);
+    } else {
+    }
+  };
 
   const renderHeader = () => {
     return (
@@ -143,7 +166,8 @@ const Resturant = ({route, navigation}) => {
                     justifyContent: 'center',
                     borderTopRightRadius: 25,
                     borderBottomRightRadius: 25,
-                  }}>
+                  }}
+                  onPress={() => editOrder('+', item.menuId, item.price)}>
                   <Text style={{...FONTS.body1, fontWeight: 'bold'}}>+</Text>
                 </TouchableOpacity>
               </View>
