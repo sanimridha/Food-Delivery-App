@@ -1,6 +1,8 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
+
+import {COLORS, FONTS, SIZES, GOOGLE_API_KEY} from '../constants';
 
 const OrderDelivery = () => {
   const renderMap = () => {
