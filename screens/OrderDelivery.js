@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
+import MapViewDirections from 'react-native-maps-directions';
 
 import {COLORS, FONTS, SIZES, GOOGLE_API_KEY, icons} from '../constants';
 
@@ -87,6 +88,14 @@ const OrderDelivery = ({route, navigation}) => {
           style={{flex: 1}}
           provider={PROVIDER_GOOGLE}
           initialRegion={region}>
+          <MapViewDirections
+            origin={fromLocation}
+            destination={toLocation}
+            apikey={GOOGLE_API_KEY}
+            strokeWidth={5}
+            strokeColor={COLORS.primary}
+            optimizeWaypoints={true}
+          />
           {destinationMarker()}
           {carIcon()}
         </MapView>
