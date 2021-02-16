@@ -24,10 +24,9 @@ const Resturant = ({route, navigation}) => {
     setCurrentLocation(currentLocation);
   }, []);
   const editOrder = (action, menuId, price) => {
+    let orderList = orderItems.slice();
+    let item = orderList.filter((a) => a.menuId == menuId);
     if (action == '+') {
-      let orderList = orderItems.slice();
-      let item = orderList.filter((a) => a.menuId);
-
       if (item.length > 0) {
         let newQty = item[0].qty + 1;
         item[0].qty = newQty;
@@ -41,9 +40,17 @@ const Resturant = ({route, navigation}) => {
         };
         orderList.push(newItem);
       }
-      setOrderItems(orderItems);
+      setOrderItems(orderList);
     } else {
     }
+  };
+  const getOrderQty = (menuId) => {
+    let orderItem = orderItems.filter((a) => a.menuId == menuId);
+
+    if (orderItem.length > 0) {
+      return orderItem[0].qty;
+    }
+    return 0;
   };
 
   const renderHeader = () => {
@@ -156,7 +163,9 @@ const Resturant = ({route, navigation}) => {
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}>
-                  <Text style={{...FONTS.h2, fontWeight: 'bold'}}>5</Text>
+                  <Text style={{...FONTS.h2, fontWeight: 'bold'}}>
+                    {getOrderQty(item.menuId)}
+                  </Text>
                 </View>
                 <TouchableOpacity
                   style={{
