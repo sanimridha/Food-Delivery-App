@@ -60,6 +60,11 @@ const Resturant = ({route, navigation}) => {
     }
     return 0;
   };
+  const getBusketItem = () => {
+    let itemCount = orderItems.reduce((a, b) => a + (b.qty || 0), 0);
+
+    return itemCount;
+  };
 
   const renderHeader = () => {
     return (
@@ -293,7 +298,7 @@ const Resturant = ({route, navigation}) => {
               borderBottomColor: COLORS.lightGray2,
               borderBottomWidth: 1,
             }}>
-            <Text style={{...FONTS.h3}}>Items in Cart</Text>
+            <Text style={{...FONTS.h3}}>{getBusketItem()} Items in Cart</Text>
             <Text style={{...FONTS.h3}}>$45</Text>
           </View>
           <View
