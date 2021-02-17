@@ -87,8 +87,7 @@ const OrderDelivery = ({route, navigation}) => {
         coordinate={fromLocation}
         anchor={{x: 0.5, y: 0.5}}
         flat={true}
-        //rotation
-      >
+        rotation={angle}>
         <Image
           source={icons.car}
           style={{
@@ -133,6 +132,7 @@ const OrderDelivery = ({route, navigation}) => {
                 };
                 if (result.coordinates.length >= 2) {
                   let angle = calculateAngle(result.coordinates);
+                  setAngle(angle);
                 }
                 setFromLocation(nextLoc);
                 setIsReady(true);
