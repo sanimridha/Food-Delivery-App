@@ -12,6 +12,10 @@ const OrderDelivery = ({route, navigation}) => {
   const [toLocation, setToLocation] = useState(null);
   const [region, setRegion] = useState(null);
 
+  const [duration, setDuration] = useState(0);
+  const [isReady, setIsReady] = useState(false);
+  const [angle, setAngle] = useState(0);
+
   useEffect(() => {
     let {resturant, currentLocation} = route.params;
 
@@ -95,6 +99,9 @@ const OrderDelivery = ({route, navigation}) => {
             strokeWidth={5}
             strokeColor={COLORS.primary}
             optimizeWaypoints={true}
+            onReady={(result) => {
+              setDuration(result.duration);
+            }}
           />
           {destinationMarker()}
           {carIcon()}
