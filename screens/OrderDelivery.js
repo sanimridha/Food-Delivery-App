@@ -38,6 +38,16 @@ const OrderDelivery = ({route, navigation}) => {
     setToLocation(toLoc);
     setRegion(mapRegion);
   }, []);
+  const calculateAngle = (coordinates) => {
+    let startLat = coordinates[0]['latitude'];
+    let startLng = coordinates[0]['longitude'];
+    let endLat = coordinates[1]['latitude'];
+    let endLng = coordinates[1]['longitude'];
+    let dx = endLat - startLat;
+    let dy = endLat - startLng;
+
+    return (Math.atan2(dy, dx) * 180) / Math.PI;
+  };
 
   const renderMap = () => {
     const destinationMarker = () => (
@@ -108,7 +118,7 @@ const OrderDelivery = ({route, navigation}) => {
 
               if (!isReady) {
                 //fit routes into maps
-                mapView.current.fitToCoordinates(result.coordinate, {
+                mapView.current.fitToCoordinates(result.coordinates, {
                   edgePadding: {
                     right: SIZES.width / 20,
                     bottom: SIZES.height / 4,
@@ -116,6 +126,16 @@ const OrderDelivery = ({route, navigation}) => {
                     top: SIZES.height / 8,
                   },
                 });
+                //Reposition the car
+                let nextLoc = {
+                  latitude: result.coordinates[0]['latitude'],
+                  longitude: result.coordinates[0]['longitude'],
+                };
+                if (result.coordinates.length >= 2) {
+                  let angle = calculateAngle(result.coordinates);
+                }
+                setFromLocation(nextLoc);
+                setIsReady(true);
               }
             }}
           />
