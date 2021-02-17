@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import {BottomTabBar} from '@react-navigation/bottom-tabs';
+import React, {useEffect, useRef, useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
@@ -6,6 +7,8 @@ import MapViewDirections from 'react-native-maps-directions';
 import {COLORS, FONTS, SIZES, GOOGLE_API_KEY, icons} from '../constants';
 
 const OrderDelivery = ({route, navigation}) => {
+  const mapView = useRef();
+
   const [resturant, setResturant] = useState(null);
   const [streetName, setStreetName] = useState('');
   const [fromLocation, setFromLocation] = useState(null);
@@ -89,6 +92,7 @@ const OrderDelivery = ({route, navigation}) => {
     return (
       <View style={{flex: 1}}>
         <MapView
+          ref={mapView}
           style={{flex: 1}}
           provider={PROVIDER_GOOGLE}
           initialRegion={region}>
@@ -101,6 +105,18 @@ const OrderDelivery = ({route, navigation}) => {
             optimizeWaypoints={true}
             onReady={(result) => {
               setDuration(result.duration);
+
+              if (!isReady) {
+                //fit routes into maps
+                mapView.current.fitToCoordinates(result.coordinate, {
+                  edgePadding: {
+                    right: SIZES.width / 20,
+                    bottom: SIZES.height / 4,
+                    left: SIZES.width / 20,
+                    top: SIZES.height / 8,
+                  },
+                });
+              }
             }}
           />
           {destinationMarker()}
