@@ -302,6 +302,47 @@ const OrderDelivery = ({route, navigation}) => {
       </View>
     );
   };
+  const renderButtons = () => {
+    return (
+      <View
+        style={{
+          position: 'absolute',
+          bottom: SIZES.height * 0.35,
+          right: SIZES.padding * 2,
+          width: 60,
+          height: 130,
+          justifyContent: 'space-between',
+        }}>
+        {/* Zoom In */}
+        <TouchableOpacity
+          style={{
+            width: 60,
+            height: 60,
+            borderRadius: 30,
+            backgroundColor: COLORS.white,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+          onPress={() => ZoomIn()}>
+          <Text style={{...FONTS.body1}}>+</Text>
+        </TouchableOpacity>
+
+        {/* Zoom Out */}
+        <TouchableOpacity
+          style={{
+            width: 60,
+            height: 60,
+            borderRadius: 30,
+            backgroundColor: COLORS.white,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+          onPress={() => ZoomOut()}>
+          <Text style={{...FONTS.body1}}>-</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
 
   return (
     <View
@@ -311,6 +352,7 @@ const OrderDelivery = ({route, navigation}) => {
       {renderMap()}
       {renderDestinationHeader()}
       {renderDeliveryInfo()}
+      {renderButtons()}
     </View>
   );
 };
