@@ -59,6 +59,17 @@ const OrderDelivery = ({route, navigation}) => {
     setRegion(newRegion);
     mapView.current.animateToRegion(newRegion, 200);
   };
+  const ZoomOut = () => {
+    let newRegion = {
+      latitude: region.latitude,
+      longitude: region.longitude,
+      latitudeDelta: region.latitudeDelta * 2,
+      longitudeDelta: region.longitudeDelta * 2,
+    };
+
+    setRegion(newRegion);
+    mapView.current.animateToRegion(newRegion, 200);
+  };
 
   const renderMap = () => {
     const destinationMarker = () => (
