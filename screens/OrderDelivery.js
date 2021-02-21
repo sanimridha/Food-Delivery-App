@@ -48,6 +48,17 @@ const OrderDelivery = ({route, navigation}) => {
 
     return (Math.atan2(dy, dx) * 180) / Math.PI;
   };
+  const ZoomIn = () => {
+    let newRegion = {
+      latitude: region.latitude,
+      longitude: region.longitude,
+      latitudeDelta: region.latitudeDelta / 2,
+      longitudeDelta: region.longitudeDelta / 2,
+    };
+
+    setRegion(newRegion);
+    mapView.current.animateToRegion(newRegion, 200);
+  };
 
   const renderMap = () => {
     const destinationMarker = () => (
